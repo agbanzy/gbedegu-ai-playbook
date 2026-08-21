@@ -230,9 +230,20 @@ h3.sub{font-family:var(--fd);font-size:clamp(19px,2.6vw,24px);font-weight:800;ma
   position:fixed;top:0;left:0;right:0;z-index:70;
   background:color-mix(in srgb,var(--bg) 86%,transparent);
   backdrop-filter:blur(16px) saturate(1.5);
-  border-bottom:1px solid transparent;transition:border-color .3s ease,background .3s ease;
+  border-bottom:1px solid transparent;
+  transition:border-color .3s ease,background .3s ease,backdrop-filter .3s ease;
 }
 .topbar.stuck{border-bottom-color:var(--line)}
+/* Over the hero the bar is glass on a dark ground, so its contents go light —
+   otherwise the light page background reads as a mismatched band on the navy hero. */
+.topbar.overhero{background:transparent;backdrop-filter:none;border-bottom-color:transparent}
+.topbar.overhero .brandmark{color:#fff}
+.topbar.overhero .brandmark .lbl2{color:rgba(255,255,255,.6)}
+.topbar.overhero .topnav a{color:rgba(255,255,255,.74)}
+.topbar.overhero .topnav a:hover{color:#fff;background:rgba(255,255,255,.13)}
+.topbar.overhero .topnav a.active{color:#fff;background:rgba(255,255,255,.18)}
+.topbar.overhero .iconbtn{color:#fff;border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.08)}
+.topbar.overhero .iconbtn:hover{color:#fff;border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.16)}
 .topbar .row{display:flex;align-items:center;gap:14px;height:60px;max-width:var(--maxw);margin:0 auto;padding:0 20px;flex-wrap:nowrap}
 .brandmark{display:flex;align-items:center;gap:9px;font-family:var(--fd);font-weight:800;font-size:15px;color:var(--ink);letter-spacing:-.02em;min-width:0;overflow:hidden;white-space:nowrap}
 .brandmark:hover{text-decoration:none}

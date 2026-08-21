@@ -321,35 +321,41 @@
   });
 
   /* ---------------- nav: read bar, sticky, active section ---------------- */
-  var topbar = $('#topbar'), readbar = $('#readbar');
+  var topbar = $('#topbar'), readbar = $('#readbar'), heroEl = $('.hero');
   var navLinks = $$('#topnav a').concat($$('#rail a'));
   var targets = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); });
+
+  function applyScrollState(){
+    var y = window.scrollY || document.documentElement.scrollTop;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if(readbar) readbar.style.width = (h > 0 ? Math.min(100, y / h * 100) : 0) + '%';
+    /* the bar stays glass-on-dark for the whole hero, not just the first 12px */
+    var overHero = heroEl ? y < heroEl.offsetHeight - 64 : false;
+    if(topbar){
+      topbar.classList.toggle('overhero', overHero);
+      topbar.classList.toggle('stuck', y > 12 && !overHero);
+    }
+
+    var best = 0, mid = y + window.innerHeight * 0.34;
+    for(var i = 0; i < targets.length; i++){
+      var t = targets[i];
+      if(t && t.offsetTop <= mid) best = i;
+    }
+    var id = targets[best] ? targets[best].id : null;
+    navLinks.forEach(function(a){
+      a.classList.toggle('active', id && a.getAttribute('href') === '#' + id);
+    });
+  }
 
   var ticking = false;
   function onScroll(){
     if(ticking) return;
     ticking = true;
-    requestAnimationFrame(function(){
-      var y = window.scrollY || document.documentElement.scrollTop;
-      var h = document.documentElement.scrollHeight - window.innerHeight;
-      if(readbar) readbar.style.width = (h > 0 ? Math.min(100, y / h * 100) : 0) + '%';
-      if(topbar) topbar.classList.toggle('stuck', y > 12);
-
-      var best = 0, mid = y + window.innerHeight * 0.34;
-      for(var i = 0; i < targets.length; i++){
-        var t = targets[i];
-        if(t && t.offsetTop <= mid) best = i;
-      }
-      var id = targets[best] ? targets[best].id : null;
-      navLinks.forEach(function(a){
-        a.classList.toggle('active', id && a.getAttribute('href') === '#' + id);
-      });
-      ticking = false;
-    });
+    requestAnimationFrame(function(){ applyScrollState(); ticking = false; });
   }
   window.addEventListener('scroll', onScroll, { passive:true });
   window.addEventListener('resize', onScroll);
-  onScroll();
+  applyScrollState();
 
   /* ---------------- marquee ---------------- */
   var mrow = $('#mrow');
