@@ -29,8 +29,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/css/site.css">
 <script>
-  /* set theme before paint to avoid a flash */
-  (function(){try{var t=localStorage.getItem('gbedegu-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+  /* Light is the default view. The OS preference does not decide it — only an
+     explicit choice from the toggle does, and that choice persists. Set before
+     paint so there is no flash. */
+  (function(){
+    var t = 'light';
+    try { t = localStorage.getItem('gbedegu-theme') || 'light'; } catch(e){}
+    document.documentElement.setAttribute('data-theme', t);
+  })();
   /* .js gates the scroll-reveal hiding — without it every section stays visible */
   document.documentElement.classList.add('js');
   /* failsafe: reveal anything GSAP never claimed, so a script error can't leave the page blank */
