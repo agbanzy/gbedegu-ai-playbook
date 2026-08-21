@@ -1,0 +1,766 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The GBEDEGU '26 AI Playbook — Godwin Agbane</title>
+<meta name="description" content="Slides, prompts, tools and the 30-day plan from “AI-Powered Personal Brand & Digital Presence” — JCI Northern Conference, GBEDEGU '26, Abuja. Free to download.">
+<meta name="author" content="Godwin Agbane">
+<meta name="theme-color" content="#151F4A">
+<link rel="canonical" href="https://jci.innoedgetech.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="GBEDEGU '26 AI Playbook">
+<meta property="og:title" content="The GBEDEGU '26 AI Playbook">
+<meta property="og:description" content="Every slide, prompt, tool and link from the AI-Powered Personal Brand session — free to download.">
+<meta property="og:url" content="https://jci.innoedgetech.com/">
+<meta property="og:image" content="https://jci.innoedgetech.com/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The GBEDEGU '26 AI Playbook">
+<meta name="twitter:description" content="Every slide, prompt, tool and link from the AI-Powered Personal Brand session — free to download.">
+<meta name="twitter:image" content="https://jci.innoedgetech.com/assets/img/og.png">
+
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/css/site.css">
+<script>
+  /* set theme before paint to avoid a flash */
+  (function(){try{var t=localStorage.getItem('gbedegu-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+  /* .js gates the scroll-reveal hiding — without it every section stays visible */
+  document.documentElement.classList.add('js');
+  /* failsafe: reveal anything GSAP never claimed, so a script error can't leave the page blank */
+  setTimeout(function(){
+    var els = document.querySelectorAll('.rv,.rv-l,.rv-r,.rv-s');
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+      if (!el._gsap && !el.style.opacity) { el.style.opacity = 1; el.style.transform = 'none'; }
+    }
+  }, 4500);
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar" id="topbar">
+  <div class="row">
+    <a class="brandmark" href="#top"><span class="bug">G</span> <span>GBEDEGU '26<span class="lbl2" style="color:var(--muted);font-weight:600"> Playbook</span></span></a>
+    <nav class="topnav" id="topnav" aria-label="Sections">
+      <a href="#downloads">Downloads</a>
+      <a href="#prompts">Prompts</a>
+      <a href="#examples">Examples</a>
+      <a href="#coworker">Coworker</a>
+      <a href="#tools">Tools</a>
+      <a href="#oss">Open Source</a>
+      <a href="#plan">30-Day Plan</a>
+      <a href="#connect">Connect</a>
+    </nav>
+    <div class="tools">
+      <button class="iconbtn" id="themeBtn" type="button" aria-label="Switch colour theme" title="Switch theme">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+      </button>
+      <a class="btn btn-primary btn-sm" href="#downloads" style="padding:9px 17px">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>
+        Slides
+      </a>
+    </div>
+  </div>
+  <div class="readbar" id="readbar"></div>
+</header>
+
+<!-- section rail -->
+<nav class="rail" id="rail" aria-label="Jump to section">
+  <a href="#top" data-label="Top"></a>
+  <a href="#downloads" data-label="Downloads"></a>
+  <a href="#shift" data-label="The shift"></a>
+  <a href="#prompts" data-label="Prompt Handbook"></a>
+  <a href="#examples" data-label="Prompt examples"></a>
+  <a href="#coworker" data-label="AI Coworker Flow"></a>
+  <a href="#tools" data-label="Tools Directory"></a>
+  <a href="#oss" data-label="Open-Source Picks"></a>
+  <a href="#shelf" data-label="Bookmark Shelf"></a>
+  <a href="#plan" data-label="30-Day Plan"></a>
+  <a href="#connect" data-label="Connect"></a>
+</nav>
+
+<!-- ================= HERO ================= -->
+<div class="hero" id="top">
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <div class="hero-in wrap">
+    <div class="hero-cols">
+      <div>
+        <div class="badge"><span class="pulse" aria-hidden="true"></span> JCI Northern Conference · Skills Development Session</div>
+        <h1>
+          <span class="ln"><span>The GBEDEGU '26</span></span>
+          <span class="ln"><span class="grad">AI Playbook</span></span>
+        </h1>
+        <p class="sub">Everything from <b>“AI-Powered Personal Brand &amp; Digital Presence”</b> — the slides, the prompt handbook, every tool with its free tier, the open-source picks, and a 30-day plan you can actually finish.</p>
+        <div class="meta">
+          <span><b>Godwin Agbane</b> · CEO, Innoedge Technologies</span>
+          <span>Hawthorn Suites, Abuja</span>
+          <span>21 August 2026</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary mag" href="#downloads">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>
+            Download the slides
+          </a>
+          <a class="btn btn-ghost mag" href="#prompts">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h13"/></svg>
+            Start with the prompts
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hstat"><b data-count="58" data-suffix="%">0%</b><span>of US small businesses used generative AI in 2025</span></div>
+          <div class="hstat"><b data-count="83" data-suffix="%">0%</b><span>of growing small businesses already experimenting</span></div>
+          <div class="hstat"><b data-naira="7450">₦0</b><span>Google AI Plus, per month, priced in Nigeria</span></div>
+        </div>
+      </div>
+
+      <!-- ROBOT -->
+      <div class="robot-stage">
+        <div class="halo" aria-hidden="true"></div>
+        <div class="ringfx" aria-hidden="true"></div>
+        <div class="ringfx b" aria-hidden="true"></div>
+        <div class="bubble" id="bubble" aria-hidden="true"></div>
+        <svg id="robot" viewBox="0 0 300 340" role="img" aria-label="An animated robot mascot for the AI playbook">
+          <defs>
+            <linearGradient id="gBody" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#F4F8FF"/><stop offset="1" stop-color="#C9D6F0"/>
+            </linearGradient>
+            <linearGradient id="gHead" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#D5E0F5"/>
+            </linearGradient>
+            <linearGradient id="gVisor" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#1B2650"/><stop offset="1" stop-color="#101838"/>
+            </linearGradient>
+            <linearGradient id="gAcc" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#29A9E1"/><stop offset="1" stop-color="#2FB7A8"/>
+            </linearGradient>
+            <radialGradient id="gCore"><stop offset="0" stop-color="#FFF6D2"/><stop offset=".5" stop-color="#F0C93C"/><stop offset="1" stop-color="#E0A21C"/></radialGradient>
+            <filter id="fGlow" x="-70%" y="-70%" width="240%" height="240%">
+              <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <ellipse id="shadow" cx="150" cy="316" rx="62" ry="11" fill="#000" opacity=".26"/>
+
+          <g class="bob" id="bob">
+            <!-- antenna -->
+            <g id="antenna">
+              <path d="M150 74 L150 50" stroke="#B7C6E6" stroke-width="5" stroke-linecap="round"/>
+              <circle id="antBall" cx="150" cy="44" r="9" fill="url(#gCore)" filter="url(#fGlow)"/>
+            </g>
+
+            <!-- arms (behind body) -->
+            <g id="armL"><rect x="46" y="188" width="20" height="70" rx="10" fill="url(#gBody)" stroke="#AFC0E2" stroke-width="2"/><circle cx="56" cy="264" r="13" fill="url(#gAcc)"/></g>
+            <g id="armR"><rect x="234" y="188" width="20" height="70" rx="10" fill="url(#gBody)" stroke="#AFC0E2" stroke-width="2"/><circle cx="244" cy="264" r="13" fill="url(#gAcc)"/></g>
+
+            <!-- body -->
+            <g id="body">
+              <rect x="72" y="176" width="156" height="124" rx="34" fill="url(#gBody)" stroke="#AFC0E2" stroke-width="2.5"/>
+              <rect x="94" y="200" width="112" height="62" rx="20" fill="#E7EDFA" stroke="#C4D2EC" stroke-width="2"/>
+              <circle id="core" cx="150" cy="231" r="18" fill="url(#gCore)" filter="url(#fGlow)"/>
+              <circle cx="150" cy="231" r="26" fill="none" stroke="#F0C93C" stroke-width="1.6" opacity=".45"/>
+              <rect x="120" y="276" width="60" height="7" rx="3.5" fill="#C4D2EC"/>
+              <rect x="132" y="288" width="36" height="5" rx="2.5" fill="#D4DFF3"/>
+            </g>
+
+            <!-- head -->
+            <g id="head">
+              <rect x="66" y="74" width="168" height="120" rx="40" fill="url(#gHead)" stroke="#AFC0E2" stroke-width="2.5"/>
+              <rect x="52" y="112" width="16" height="40" rx="8" fill="url(#gAcc)"/>
+              <rect x="232" y="112" width="16" height="40" rx="8" fill="url(#gAcc)"/>
+              <rect x="86" y="98" width="128" height="74" rx="31" fill="url(#gVisor)"/>
+
+              <!-- eyes -->
+              <g id="eyes">
+                <ellipse id="eyeL" cx="122" cy="135" rx="17" ry="18" fill="#0A1130"/>
+                <ellipse id="eyeR" cx="178" cy="135" rx="17" ry="18" fill="#0A1130"/>
+                <g id="pupils">
+                  <circle id="pupL" cx="122" cy="135" r="11" fill="#38C6F0" filter="url(#fGlow)"/>
+                  <circle id="pupR" cx="178" cy="135" r="11" fill="#38C6F0" filter="url(#fGlow)"/>
+                  <circle id="glL" cx="126" cy="131" r="3.4" fill="#fff" opacity=".92"/>
+                  <circle id="glR" cx="182" cy="131" r="3.4" fill="#fff" opacity=".92"/>
+                </g>
+                <rect id="lidL" x="103" y="112" width="38" height="0" rx="4" fill="#151F4A"/>
+                <rect id="lidR" x="159" y="112" width="38" height="0" rx="4" fill="#151F4A"/>
+              </g>
+
+              <path id="mouth" d="M136 158 Q150 167 164 158" stroke="#2FB7A8" stroke-width="4" stroke-linecap="round" fill="none"/>
+              <circle id="chkL" cx="103" cy="155" r="4.5" fill="#2FB7A8" opacity=".55"/>
+              <circle id="chkR" cx="197" cy="155" r="4.5" fill="#2FB7A8" opacity=".55"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint" aria-hidden="true">Scroll<i></i></div>
+</div>
+
+<main id="main">
+
+<!-- ================= DOWNLOADS ================= -->
+<section id="downloads">
+  <div class="wrap">
+    <div class="kicker rv">The kit</div>
+    <h2 class="sec rv">Take everything with you</h2>
+    <p class="lede rv">The full 38-slide deck, the editable original, and every handout as a plain markdown file you can paste straight into Claude, ChatGPT or Gemini. No email, no signup — just download.</p>
+
+    <div class="dl-grid">
+      <a class="dl feature rv" href="/downloads/GBEDEGU26-AI-Playbook.zip" download>
+        <span class="fi zip">ZIP</span>
+        <span>
+          <b>The complete playbook</b>
+          <small>Everything below in one archive — slides in both formats plus all six handouts. Start here.</small>
+          <span class="size"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5"/></svg> ZIP · 2.9 MB · 8 files</span>
+        </span>
+        <svg class="arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+
+      <a class="dl rv" href="/downloads/AI-Powered-Personal-Brand-GBEDEGU26.pdf" download>
+        <span class="fi pdf">PDF</span>
+        <span><b>The slides</b><small>All 38 slides, exactly as presented. Best for reading and sharing.</small>
+        <span class="size">PDF · 1.0 MB · 38 slides</span></span>
+        <svg class="arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+
+      <a class="dl rv" href="/downloads/AI-Powered-Personal-Brand-GBEDEGU26.pptx" download>
+        <span class="fi pptx">PPTX</span>
+        <span><b>The editable deck</b><small>PowerPoint / Keynote / Google Slides. Reuse it, remix it, present it yourself.</small>
+        <span class="size">PPTX · 3.4 MB · editable</span></span>
+        <svg class="arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+
+      <a class="dl rv" href="/downloads/prompt-handbook.md" download>
+        <span class="fi md">MD</span>
+        <span><b>The Prompt Handbook</b><small>The six-part formula, right vs wrong, four power moves, five role prompts, the leverage ladder.</small>
+        <span class="size">Markdown · 4.2 KB</span></span>
+        <svg class="arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+
+      <a class="dl rv" href="/downloads/ai-coworker-flow.md" download>
+        <span class="fi md">MD</span>
+        <span><b>The AI Coworker Flow</b><small>Set up its desk, the 15-minute daily rhythm, the briefing framework, the review gates.</small>
+        <span class="size">Markdown · 3.2 KB</span></span>
+        <svg class="arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+
+      <a class="dl rv" href="/downloads/ai-tools-directory.md" download>
+        <span class="fi md">MD</span>
+        <span><b>AI Tools Directory</b><small>Every tool from the talk with links, free-tier notes and honest pricing.</small>
+        <span class="size">Markdown · 4.1 KB</span></span>
+        <svg class="arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+
+      <a class="dl rv" href="/downloads/open-source-picks.md" download>
+        <span class="fi md">MD</span>
+        <span><b>Open-Source Picks</b><small>Free, self-hostable projects worth knowing — agents, media, research, infrastructure.</small>
+        <span class="size">Markdown · 4.7 KB</span></span>
+        <svg class="arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+
+      <a class="dl rv" href="/downloads/bookmark-shelf.md" download>
+        <span class="fi md">MD</span>
+        <span><b>The Bookmark Shelf</b><small>Three months of curated links — science, education, design, 3D and research.</small>
+        <span class="size">Markdown · 5.4 KB</span></span>
+        <svg class="arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+
+      <a class="dl rv" href="/downloads/30-day-action-plan.md" download>
+        <span class="fi md">MD</span>
+        <span><b>30-Day Action Plan</b><small>Four weeks, one checklist. The version you can tick off is further down this page.</small>
+        <span class="size">Markdown · 2.2 KB</span></span>
+        <svg class="arrow" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+
+    <div class="note ng rv"><b>Tip that makes the markdown worth more than the PDF:</b> upload the four handouts into a Project in your assistant (Claude Projects, ChatGPT custom GPT, or a Gemini Gem). Then ask it things like <i>“using the tools directory, build me a ₦0 stack for a photographer in Abuja”</i> — it answers from the actual material, not from memory.</div>
+  </div>
+</section>
+
+<!-- ================= THE SHIFT (pinned timeline) ================= -->
+<section id="shift" style="padding-bottom:0">
+  <div class="pinwrap" id="pinwrap">
+    <div class="pinner">
+      <div class="pinhead">
+        <div class="kicker">Why now</div>
+        <h2 class="sec">Every era collapsed distance — and time</h2>
+        <p class="lede" style="margin-bottom:0">The gap that keeps shrinking: idea → audience → income. The winners were rarely the most talented. They adopted earliest, and stayed consistent.</p>
+      </div>
+      <div class="track" id="track">
+        <article class="era"><div class="yr">1800s</div><h3>Letters &amp; telegraph</h3><p>Weeks to reach a customer. Distance was measured in days of travel.</p></article>
+        <article class="era"><div class="yr">1900s</div><h3>Telephone &amp; fax</h3><p>Same-day business. A conversation no longer needed a journey.</p></article>
+        <article class="era"><div class="yr">1990s</div><h3>Email &amp; the web</h3><p>Global reach begins. The first businesses online owned search while rivals printed flyers.</p></article>
+        <article class="era"><div class="yr">2000s</div><h3>Mobile &amp; social</h3><p>Everyone reachable, everywhere. The first brands on social built audiences for free.</p></article>
+        <article class="era"><div class="yr">2010s</div><h3>Cloud &amp; remote work</h3><p>Work from anywhere. The office stopped being a place.</p></article>
+        <article class="era now"><div class="tag">You are here</div><div class="yr">2020s</div><h3>AI &amp; agents</h3><p>Work delegated to software. The first AI-powered operators own speed — more output, more presence, same 24 hours.</p></article>
+      </div>
+      <div class="pinnote">70 years of AI research to get here. The last four changed everything — and you are still early.</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="mrow" id="mrow"></div>
+</div>
+
+<!-- ================= PROMPT HANDBOOK ================= -->
+<section id="prompts">
+  <div class="wrap">
+    <div class="kicker rv">Part 1</div>
+    <h2 class="sec rv">The Prompt Handbook</h2>
+    <p class="lede rv">Same tool, same thirty seconds — the prompt is the whole difference. Every strong prompt mixes these six parts. When an answer disappoints you, one of them is usually missing. <b>Hover or tap a card to see it in use.</b></p>
+
+    <div class="flipgrid">
+      <div class="flip rv-s" tabindex="0"><div class="flip-in">
+        <div class="flip-f"><div class="n">01</div><h3>Role</h3><p>Tell the AI who to be.</p><span class="hintflip">See it <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></div>
+        <div class="flip-b"><div class="lbl">In use</div><div class="eg">“You are a <b>brand strategist</b> who works with African SMEs.”</div></div>
+      </div></div>
+
+      <div class="flip rv-s" tabindex="0"><div class="flip-in">
+        <div class="flip-f"><div class="n">02</div><h3>Context</h3><p>The background it can't guess.</p><span class="hintflip">See it <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></div>
+        <div class="flip-b"><div class="lbl">In use</div><div class="eg">“My audience is <b>young professionals in Abuja</b>. My goal is enquiries, not likes.”</div></div>
+      </div></div>
+
+      <div class="flip rv-s" tabindex="0"><div class="flip-in">
+        <div class="flip-f"><div class="n">03</div><h3>Task</h3><p>The verb — what exactly should it produce?</p><span class="hintflip">See it <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></div>
+        <div class="flip-b"><div class="lbl">In use</div><div class="eg">“Write my <b>Instagram bio</b> and a pinned-post caption.”</div></div>
+      </div></div>
+
+      <div class="flip rv-s" tabindex="0"><div class="flip-in">
+        <div class="flip-f"><div class="n">04</div><h3>Constraints</h3><p>Length, tone, format, and what to avoid.</p><span class="hintflip">See it <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></div>
+        <div class="flip-b"><div class="lbl">In use</div><div class="eg">“<b>150 words max</b>, warm but expert, no hashtags, no jargon.”</div></div>
+      </div></div>
+
+      <div class="flip rv-s" tabindex="0"><div class="flip-in">
+        <div class="flip-f"><div class="n">05</div><h3>Examples</h3><p>Show one to three samples of what “good” looks like.</p><span class="hintflip">See it <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></div>
+        <div class="flip-b"><div class="lbl">In use</div><div class="eg">“Here are two bios I love — <b>match this energy</b>: …”</div></div>
+      </div></div>
+
+      <div class="flip rv-s" tabindex="0"><div class="flip-in">
+        <div class="flip-f"><div class="n">06</div><h3>Iterate</h3><p>Treat answer number one as draft number one.</p><span class="hintflip">See it <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></span></div>
+        <div class="flip-b"><div class="lbl">In use</div><div class="eg">“Make option 2 <b>bolder</b>. Now shorten it. Now end with a question.”</div></div>
+      </div></div>
+    </div>
+
+    <h3 class="sub rv">Right vs wrong — the same thirty seconds</h3>
+    <div class="vs">
+      <div class="card bad rv-l">
+        <h3><span class="pill">Wrong</span> The prompt most people write</h3>
+        <div class="eg">Write a LinkedIn post about my business.</div>
+        <div class="verdict">Generic. Could be anyone's business. You'll rewrite it anyway — so you saved nothing.</div>
+      </div>
+      <div class="card good rv-r">
+        <h3><span class="pill">Right</span> The prompt that works</h3>
+        <div class="eg">You are a LinkedIn ghostwriter for a Nigerian fintech founder <b>[ROLE]</b>. My audience: young professionals in Abuja <b>[CONTEXT]</b>. Write a 150-word launch post for our payments app — warm, confident, no hashtags, end with a question <b>[TASK + CONSTRAINTS]</b>. Here's a post whose tone I like: … <b>[EXAMPLE]</b></div>
+        <div class="verdict">Sounds like you. Ready to post — first try.</div>
+      </div>
+    </div>
+
+    <h3 class="sub rv">Four power moves</h3>
+    <ol class="steps">
+      <li class="rv"><b>Show examples (few-shot)</b><span>Paste two or three samples of what good looks like. The single fastest quality upgrade there is — it copies your taste, and taste is the part it can't guess.</span></li>
+      <li class="rv"><b>Make it plan first</b><span>“Before writing, show me your outline.” Approve the plan, then let it write. Far fewer rewrites than correcting a finished draft.</span></li>
+      <li class="rv"><b>Force the format</b><span>“Give me a table / a checklist / three options ranked with trade-offs.” You get structure you can act on instead of an essay you have to mine.</span></li>
+      <li class="rv"><b>Run a critique loop</b><span>“Now critique your draft against my goals, then rewrite it.” A built-in editor, free, and it catches things you'd have sent.</span></li>
+    </ol>
+
+    <h3 class="sub rv">Five role prompts to save today</h3>
+    <p class="lede rv" style="margin-bottom:24px">Copy these, fill the brackets, and save them inside your assistant's Project — as a custom GPT, a Claude Project instruction, or a Gemini Gem. Then they're one click away forever.</p>
+    <div class="grid g2" id="rolePrompts"></div>
+
+    <h3 class="sub rv">From prompts to systems — the leverage ladder</h3>
+    <p class="lede rv">Each rung costs you less time per unit of output. Climb exactly one rung this month.</p>
+    <div class="ladder" id="ladder">
+      <div class="rung rv" data-rung="0"><span class="lvl">1</span><span><b>Prompt</b><span>One ask, one answer.</span><span class="ex">“Draft this email.”</span></span></div>
+      <div class="rung rv" data-rung="1"><span class="lvl">2</span><span><b>Workflow</b><span>Chained steps, repeatable.</span><span class="ex">Research → outline → draft → edit, saved as one recipe.</span></span></div>
+      <div class="rung rv" data-rung="2"><span class="lvl">3</span><span><b>Agent</b><span>A goal, plus tools, plus permission.</span><span class="ex">“Find 20 venues, compare prices, draft outreach” — it browses and builds the sheet.</span></span></div>
+      <div class="rung rv" data-rung="3"><span class="lvl">4</span><span><b>Loop</b><span>Draft → critique → improve, repeated.</span><span class="ex">A critic AI scores each draft against your checklist until it passes.</span></span></div>
+      <div class="rung rv" data-rung="4"><span class="lvl">5</span><span><b>Graph</b><span>A team of agents, each owning a step.</span><span class="ex">Researcher → Writer → Fact-checker → Designer → you approve.</span></span></div>
+    </div>
+
+    <div class="note warn rv"><b>The guardrails.</b> AI drafts — <b>you approve</b> anything public, legal, or money-related. Never paste secrets or customers' personal data into a chat. Verify the claims it makes about the real world and ask for sources. And edit every draft until it sounds like you: the tools are the same for everyone, taste is not.</div>
+  </div>
+</section>
+
+<!-- ================= PROMPT EXAMPLES ================= -->
+<section id="examples" style="background:var(--surface2)">
+  <div class="wrap">
+    <div class="kicker rv">Part 2</div>
+    <h2 class="sec rv">The prompt bank</h2>
+    <p class="lede rv">Twenty-four prompts you can use tonight, grouped by the job they do. Every one is written with the six parts. Tap <b>Copy</b>, paste into your assistant, and fill in the highlighted brackets.</p>
+
+    <div class="chips" id="egChips" role="group" aria-label="Filter prompts by job"></div>
+    <div class="grid g2" id="egGrid"></div>
+    <p class="count" id="egCount" aria-live="polite" style="margin-top:18px"></p>
+  </div>
+</section>
+
+<!-- ================= COWORKER FLOW ================= -->
+<section id="coworker">
+  <div class="wrap">
+    <div class="kicker rv">Part 3</div>
+    <h2 class="sec rv">The AI Coworker Flow</h2>
+    <p class="lede rv">Stop treating AI like Google — ask, get, leave. Start treating it like a capable junior colleague: brief it, give it materials, review its work, and let it keep context between conversations.</p>
+
+    <h3 class="sub rv" style="margin-top:0">1 · Set up its desk (one hour, once)</h3>
+    <ol class="steps">
+      <li class="rv"><b>Pick one assistant and make it a home</b><span>Claude, ChatGPT or Gemini — then create a Project or workspace for your business. One tool mastered beats ten tabs open.</span></li>
+      <li class="rv"><b>Upload what a new hire would need</b><span>What you sell, your prices, your best posts, your tone, your FAQs, a description of your target customer.</span></li>
+      <li class="rv"><b>Write standing instructions</b><span>“Always write in my voice — warm, direct, no jargon. My customer is X. Never invent prices — ask me.”</span></li>
+      <li class="rv"><b>Save your five role prompts inside it</b><span>Now every conversation starts with a coworker who already knows your business.</span></li>
+    </ol>
+
+    <h3 class="sub rv">2 · The daily flow (15–30 minutes)</h3>
+    <div class="grid g3">
+      <div class="card tilt rv"><span class="sheen" aria-hidden="true"></span><h3>Morning brief · 5 min</h3><p>“Here's what's on today: [three items]. Draft the two emails, outline the proposal, and list what you need from me.”</p></div>
+      <div class="card tilt rv"><span class="sheen" aria-hidden="true"></span><h3>Midday review · 10 min</h3><p>Read its drafts like a manager: approve, edit, or send back with one line of feedback — “warmer”, “shorter”, “add the price table”.</p></div>
+      <div class="card tilt rv"><span class="sheen" aria-hidden="true"></span><h3>Evening close · 5 min</h3><p>“Summarize what we finished, what's pending, and pre-draft tomorrow's first task.”</p></div>
+    </div>
+
+    <h3 class="sub rv">3 · The briefing framework</h3>
+    <p class="lede rv">Brief AI the way you'd brief a contractor — six lines, and the quality jumps immediately.</p>
+    <div class="grid g3">
+      <div class="card rv"><h3>Role</h3><p>Who it should be for this task.</p></div>
+      <div class="card rv"><h3>Goal</h3><p>What “done” actually looks like.</p></div>
+      <div class="card rv"><h3>Materials</h3><p>Paste or attach everything relevant.</p></div>
+      <div class="card rv"><h3>Constraints</h3><p>Format, length, tone, budget — deadline-level detail.</p></div>
+      <div class="card rv"><h3>Exclusions</h3><p>What NOT to do. “Don't contact anyone, don't invent numbers.”</p></div>
+      <div class="card rv"><h3>Checkpoint</h3><p>“Show me the plan before executing.”</p></div>
+    </div>
+
+    <h3 class="sub rv">4 · Review gates (non-negotiable)</h3>
+    <div class="tablewrap rv"><table>
+      <thead><tr><th>Work type</th><th>Your gate</th></tr></thead>
+      <tbody>
+        <tr><td><b>Internal drafts, research, summaries</b></td><td>Skim and go.</td></tr>
+        <tr><td><b>Anything public</b> — posts, emails to clients</td><td>You read every word before it sends.</td></tr>
+        <tr><td><b>Money, legal, contracts, pricing</b></td><td>You decide. AI only prepares the options.</td></tr>
+        <tr><td><b>Customers' personal data</b></td><td>Don't paste it in at all.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub rv">5 · Three starter automations</h3>
+    <div class="grid g3">
+      <div class="card tilt rv"><span class="sheen" aria-hidden="true"></span><h3>The lead machine</h3><p>Enquiry from Instagram, WhatsApp or a web form → AI drafts a reply in your voice → the lead is logged to a sheet or CRM → a day-3 follow-up draft → a Monday-morning summary to you.</p><p style="margin-top:9px"><span class="tag free">₦0 – $20/mo</span> <span class="tag">Zapier · Make · n8n</span></p></div>
+      <div class="card tilt rv"><span class="sheen" aria-hidden="true"></span><h3>The content engine</h3><p>One long piece a week — a voice note counts — cut by AI into posts, captions, clips and a newsletter, then scheduled through Buffer.</p><p style="margin-top:9px"><span class="tag free">Free tier works</span> <span class="tag">Opus Clip · Buffer</span></p></div>
+      <div class="card tilt rv"><span class="sheen" aria-hidden="true"></span><h3>The inbox triager</h3><p>New emails labelled by AI — lead, invoice, spam, urgent — into a daily digest with a suggested one-line reply for each.</p><p style="margin-top:9px"><span class="tag free">₦0 self-hosted</span> <span class="tag">n8n · Gmail</span></p></div>
+    </div>
+
+    <div class="note rv"><b>Scaling: from coworker to team.</b> Delegate the repetitive to automations — they work 24/7 without a salary. Hire agents like junior staff: research, first drafts, data entry, QA — briefed like interns, reviewed like interns. Systemize, so your winning prompts become SOPs your whole team reuses. <b>The guardrail:</b> humans stay on money, legal, and anything public-facing. Reputation can't be regenerated.</div>
+  </div>
+</section>
+
+<!-- ================= TOOLS ================= -->
+<section id="tools" style="background:var(--surface2)">
+  <div class="wrap">
+    <div class="kicker rv">Part 4</div>
+    <h2 class="sec rv">The tools directory</h2>
+    <p class="lede rv">Every tool from the talk, with its real free tier and honest pricing — verified August 2026. Nothing here is sponsored. Search it, filter it, and start with the free column.</p>
+
+    <div class="searchrow rv">
+      <label class="search">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <span class="sr-only">Search tools</span>
+        <input type="search" id="toolSearch" placeholder="Search tools — try “video”, “CRM”, “free”…" autocomplete="off">
+        <button class="clr" id="toolClear" type="button" aria-label="Clear search"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </label>
+      <label class="toggle"><input type="checkbox" id="freeOnly"> Free tier only</label>
+    </div>
+    <div class="chips" id="toolChips" role="group" aria-label="Filter tools by category"></div>
+    <p class="count" id="toolCount" aria-live="polite"></p>
+    <div class="toolgrid" id="toolGrid"></div>
+    <div class="empty" id="toolEmpty">No tool matches that. Try a broader word — or clear the filters.</div>
+
+    <div class="note ng rv"><b>Right here in Nigeria.</b> Google AI Plus is priced locally at <b>₦7,450/month</b> — that's Gemini Pro, Veo video, Flow, NotebookLM and 200 GB of storage. Google announced <b>12 months free for Nigerian students</b> in August 2026. Access is solved. The edge now is knowing how to use it.</div>
+
+    <div class="note warn rv"><b>The ₦0 starter stack.</b> A free assistant tier + Pomelli (beta) + Canva free + NotebookLM + HubSpot's free CRM + Buffer free + a site you vibe-coded, hosted on Vercel or GitHub Pages. <b>Pay only when a tool passes a test:</b> you hit its free limit every week, it saves you 2+ hours a month, or it directly touches revenue. Tools don't build brands — consistency does.</div>
+  </div>
+</section>
+
+<!-- ================= OSS ================= -->
+<section id="oss">
+  <div class="wrap">
+    <div class="kicker rv">Part 5</div>
+    <h2 class="sec rv">Open-source picks</h2>
+    <p class="lede rv">Free, open source, and worth knowing — curated from three months of research. Star what is useful; self-host what saves you money. Check each project&rsquo;s licence and recent activity before you build on it.</p>
+    <h3 class="sub rv">AI agents &amp; assistants</h3>
+    <ul class="linklist">
+      <li class="rv"><b>DeepSeek Harness</b> <span>— <a href="https://github.com/deepseek-ai/deepseek-harness" target="_blank" rel="noopener">github.com/deepseek-ai/deepseek-harness</a> — MIT-licensed, plugin-based coding-agent harness; a free alternative to commercial coding agents (121K+ stars).</span></li>
+      <li class="rv"><b>Onyx</b> <span>— <a href="https://github.com/onyx-dot-app/onyx" target="_blank" rel="noopener">github.com/onyx-dot-app/onyx</a> — open-source AI assistant with RAG and 50+ connectors; self-host your own &quot;company AI&quot;.</span></li>
+      <li class="rv"><b>OpenBot</b> <span>— <a href="https://github.com/CopilotKit/openbot" target="_blank" rel="noopener">github.com/CopilotKit/openbot</a> — open-source AI-coworker platform: computer use, human handoffs.</span></li>
+      <li class="rv"><b>goose (Block)</b> <span>— <a href="https://github.com/block/goose" target="_blank" rel="noopener">github.com/block/goose</a> — self-hosted AI agent framework from Jack Dorsey&#x27;s Block; channels, search, Git integration.</span></li>
+      <li class="rv"><b>OpenClaw</b> <span>— <a href="https://docs.openclaw.ai" target="_blank" rel="noopener">docs.openclaw.ai</a> — open-source agent platform with a large contributor community.</span></li>
+      <li class="rv"><b>Hermes</b> <span>— MIT-licensed bot framework; runs locally, lets you assign a different model to every agent.</span></li>
+      <li class="rv"><b>The Agency</b> <span>— an open-source &quot;AI company&quot;: 147 pre-configured agents working together.</span></li>
+      <li class="rv"><b>Graphiti</b> <span>— <a href="https://github.com/getzep/graphiti" target="_blank" rel="noopener">github.com/getzep/graphiti</a> — long-term memory for AI agents via context graphs (29K+ stars).</span></li>
+      <li class="rv"><b>agent-scripts (steipete)</b> <span>— Peter Steinberger&#x27;s open-sourced Claude Code loadout — great for seeing how a power user structures agents.</span></li>
+      <li class="rv"><b>GitHub Spec Kit</b> <span>— <a href="https://github.com/github/spec-kit" target="_blank" rel="noopener">github.com/github/spec-kit</a> — spec-driven development toolkit for working with AI agents.</span></li>
+      <li class="rv"><b>230+ prebuilt Claude Code agents</b> <span>— community repo of role-based subagents (engineering, marketing, design, security).</span></li>
+    </ul>
+    <h3 class="sub rv">Content &amp; media</h3>
+    <ul class="linklist">
+      <li class="rv"><b>OpenCut</b> <span>— <a href="https://github.com/OpenCut-app/OpenCut" target="_blank" rel="noopener">github.com/OpenCut-app/OpenCut</a> — free open-source CapCut alternative video editor (60K+ stars, MCP server in the works).</span></li>
+      <li class="rv"><b>voicebox</b> <span>— <a href="https://github.com/jamiepine/voicebox" target="_blank" rel="noopener">github.com/jamiepine/voicebox</a> — local, open-source ElevenLabs alternative for voice (51K stars).</span></li>
+      <li class="rv"><b>MoneyPrinterTurbo</b> <span>— <a href="https://github.com/harry0703/MoneyPrinterTurbo" target="_blank" rel="noopener">github.com/harry0703/MoneyPrinterTurbo</a> — topic → finished short video, automatically.</span></li>
+      <li class="rv"><b>Palmier</b> <span>— open-source Mac-native AI video editor designed so AI assistants can drive the edit.</span></li>
+      <li class="rv"><b>Mono Charts / Amicro</b> <span>— <a href="https://amicro.vercel.app" target="_blank" rel="noopener">amicro.vercel.app</a> — open-source animated React charts + UI library.</span></li>
+      <li class="rv"><b>Morphicons</b> <span>— 7KB icon-morphing animation library.</span></li>
+      <li class="rv"><b>Data Formulator (Microsoft)</b> <span>— <a href="https://github.com/microsoft/data-formulator" target="_blank" rel="noopener">github.com/microsoft/data-formulator</a> — plain-English data → charts.</span></li>
+    </ul>
+    <h3 class="sub rv">Research, documents &amp; knowledge</h3>
+    <ul class="linklist">
+      <li class="rv"><b>MinerU</b> <span>— <a href="https://github.com/opendatalab/MinerU" target="_blank" rel="noopener">github.com/opendatalab/MinerU</a> — converts PDFs to clean markdown for AI/RAG pipelines.</span></li>
+      <li class="rv"><b>Prompts Chat</b> <span>— <a href="https://prompts.chat" target="_blank" rel="noopener">prompts.chat</a> — huge community prompt library.</span></li>
+      <li class="rv"><b>public-apis</b> <span>— <a href="https://github.com/public-apis/public-apis" target="_blank" rel="noopener">github.com/public-apis/public-apis</a> — 1,000+ free APIs for anything you&#x27;re building (462K stars).</span></li>
+      <li class="rv"><b>Hubble</b> <span>— free open-source Markdown notepad built for humans + agents working together.</span></li>
+      <li class="rv"><b>Clone-Wars</b> <span>— <a href="https://github.com/GorvGoyl/Clone-Wars" target="_blank" rel="noopener">github.com/GorvGoyl/Clone-Wars</a> — 100+ open-source clones of Netflix/Airbnb/Spotify-class apps — read real codebases free.</span></li>
+      <li class="rv"><b>World Monitor</b> <span>— open-source live global-intelligence dashboard: 3D globe, 500+ news feeds.</span></li>
+    </ul>
+    <h3 class="sub rv">Infrastructure &amp; security (for the technical)</h3>
+    <ul class="linklist">
+      <li class="rv"><b>Authentik</b> <span>— <a href="https://github.com/goauthentik/authentik" target="_blank" rel="noopener">github.com/goauthentik/authentik</a> — self-hosted SSO/MFA identity platform; replaces expensive enterprise auth.</span></li>
+      <li class="rv"><b>n8n</b> <span>— <a href="https://github.com/n8n-io/n8n" target="_blank" rel="noopener">github.com/n8n-io/n8n</a> — open-source workflow automation with AI-native nodes; self-host for the cost of a small server.</span></li>
+      <li class="rv"><b>Claude-BugHunter</b> <span>— <a href="https://github.com/elementalsouls/Claude-BugHunter" target="_blank" rel="noopener">github.com/elementalsouls/Claude-BugHunter</a> — MIT; turns Claude into a security scanner for your own apps (71 bug-bounty skills).</span></li>
+      <li class="rv"><b>greenlight (RevylAI)</b> <span>— <a href="https://github.com/RevylAI/greenlight" target="_blank" rel="noopener">github.com/RevylAI/greenlight</a> — scans your mobile app for App Store / Play Store compliance issues before submission.</span></li>
+      <li class="rv"><b>OpenHaystack</b> <span>— <a href="https://github.com/seemoo-lab/openhaystack" target="_blank" rel="noopener">github.com/seemoo-lab/openhaystack</a> — build DIY &quot;Find My&quot; trackers from cheap Bluetooth hardware.</span></li>
+      <li class="rv"><b>DigitalPlat FreeDomain</b> <span>— <a href="https://github.com/DigitalPlat/FreeDomain" target="_blank" rel="noopener">github.com/DigitalPlat/FreeDomain</a> — free domain registration + DNS setup guide.</span></li>
+      <li class="rv"><b>Graphify</b> <span>— maps any codebase into a knowledge graph.</span></li>
+    </ul>
+    <h3 class="sub rv">Open models (run AI on your own hardware)</h3>
+    <ul class="linklist">
+      <li class="rv"><b>GLM (Z.ai)</b> <span>— open-weights frontier model family; quantized versions run on consumer hardware via Unsloth.</span></li>
+      <li class="rv"><b>Kimi K3 (Moonshot)</b> <span>— open-source model with 1M-token context.</span></li>
+      <li class="rv"><b>Slime (THUDM)</b> <span>— <a href="https://github.com/THUDM/slime" target="_blank" rel="noopener">github.com/THUDM/slime</a> — the RL training framework behind GLM.</span></li>
+      <li class="rv"><b>SLAM3R</b> <span>— real-time 3D scene reconstruction from a single ordinary video.</span></li>
+      <li class="rv"><b>text-to-cad</b> <span>— open-source harness that turns coding agents into CAD engineers (STEP/STL/gcode output, 10K stars).</span></li>
+    </ul>
+    <div class="note rv"><b>Why this list matters more than it looks.</b> Every one of these replaces something you would otherwise pay a monthly fee for. Self-hosting n8n on a small server costs less than one Zapier seat — and reading a real codebase from Clone-Wars teaches more than any course.</div>
+  </div>
+</section>
+
+<!-- ================= SHELF ================= -->
+<section id="shelf" style="background:var(--surface2)">
+  <div class="wrap">
+    <div class="kicker rv">Part 6</div>
+    <h2 class="sec rv">The bookmark shelf</h2>
+    <p class="lede rv">Science, education, design, 3D and specialised research — the interesting half of three months of bookmarks. Links marked <code>x.com/…</code> open the original post, where the demo or thread lives.</p>
+    <h3 class="sub rv">Science &amp; curiosity</h3>
+    <ul class="linklist">
+      <li class="rv"><b>Humanome body explorer</b> <span>— interactive 3D human body: 2,277 body parts, 222 brain structures, 8,000+ conditions mapped. <a href="https://x.com/yumahey/status/2077065390295769103" target="_blank" rel="noopener">x.com/yumahey/status/2077065390295769103</a></span></li>
+      <li class="rv"><b>Hexapod robot simulator</b> <span>— browser robot sim with inverse kinematics and gait algorithms written from scratch. <a href="https://x.com/DilumSanjaya/status/2080335531108716750" target="_blank" rel="noopener">x.com/DilumSanjaya/status/2080335531108716750</a></span></li>
+      <li class="rv"><b>Kidney in 3D</b> <span>— beautiful 3D animation of kidney structure and blood filtration. <a href="https://x.com/Med_Bytes/status/2081696205235802307" target="_blank" rel="noopener">x.com/Med_Bytes/status/2081696205235802307</a></span></li>
+      <li class="rv"><b>HAGAMOSphere</b> <span>— Japanese spherical drone that both rolls on the ground and flies. <a href="https://x.com/Ronald_vanLoon/status/2081729087609905276" target="_blank" rel="noopener">x.com/Ronald_vanLoon/status/2081729087609905276</a></span></li>
+      <li class="rv"><b>Induction heating, explained</b> <span>— Massimo&#x27;s physics explainer on eddy-current heating. <a href="https://x.com/Rainmaker1973/status/2082398496506753059" target="_blank" rel="noopener">x.com/Rainmaker1973/status/2082398496506753059</a></span></li>
+      <li class="rv"><b>Magnetic bound states (paper)</b> <span>— &quot;Polarity-Free Magnetic Repulsion and Magnetic Bound State&quot; — <a href="https://doi.org/10.3390/sym13030442" target="_blank" rel="noopener">doi.org/10.3390/sym13030442</a></span></li>
+    </ul>
+    <h3 class="sub rv">Education &amp; learning</h3>
+    <ul class="linklist">
+      <li class="rv"><b>Gemini student hub</b> <span>— study notebooks, flashcards and practice quizzes in one place. <a href="https://x.com/GeminiApp/status/2090166400367357973" target="_blank" rel="noopener">x.com/GeminiApp/status/2090166400367357973</a></span></li>
+      <li class="rv"><b>Free course: 3D websites with AI</b> <span>— 1-hour course on interactive 3D experiences and games. <a href="https://x.com/RoundtableSpace/status/2086599657925329347" target="_blank" rel="noopener">x.com/RoundtableSpace/status/2086599657925329347</a></span></li>
+      <li class="rv"><b>Immersive websites tutorial</b> <span>— 14-minute build-along with a frontier AI model. <a href="https://x.com/RoundtableSpace/status/2084870766328184868" target="_blank" rel="noopener">x.com/RoundtableSpace/status/2084870766328184868</a></span></li>
+      <li class="rv"><b>Graph engineering, clearly explained</b> <span>— orchestrating AI coding agents as graphs. <a href="https://x.com/RoundtableSpace/status/2084598974858535105" target="_blank" rel="noopener">x.com/RoundtableSpace/status/2084598974858535105</a></span></li>
+      <li class="rv"><b>Self-learning Obsidian setup</b> <span>— AI finds your knowledge gaps and researches them overnight into your notes. <a href="https://x.com/RoundtableSpace/status/2073553694675636315" target="_blank" rel="noopener">x.com/RoundtableSpace/status/2073553694675636315</a></span></li>
+      <li class="rv"><b>Clone-Wars</b> <span>— 100+ open-source clones of Netflix/Airbnb-class apps; read real codebases to learn. <a href="https://gourav.io/clone-wars" target="_blank" rel="noopener">gourav.io/clone-wars</a></span></li>
+      <li class="rv"><b>Human 3.0 map</b> <span>— one-image summary map of Dan Koe&#x27;s &quot;Human 3.0&quot;. <a href="https://x.com/MindBranches/status/2071373077263298907" target="_blank" rel="noopener">x.com/MindBranches/status/2071373077263298907</a></span></li>
+      <li class="rv"><b>Study-abroad funding</b> <span>— Switzerland scholarship/relocation opportunities thread. <a href="https://x.com/Madridghost1/status/2069296828311306389" target="_blank" rel="noopener">x.com/Madridghost1/status/2069296828311306389</a></span></li>
+    </ul>
+    <h3 class="sub rv">Design projects &amp; resources</h3>
+    <ul class="linklist">
+      <li class="rv"><b>UI breakdown, step by step</b> <span>— how a striking temple-dome site was designed, with linked resources. <a href="https://x.com/marina_uiux/status/2080656136869449859" target="_blank" rel="noopener">x.com/marina_uiux/status/2080656136869449859</a></span></li>
+      <li class="rv"><b>AI vs the design bar</b> <span>— Gary Simon (DesignCourse) stress-tests an AI model on UI and logo design. <a href="https://x.com/designcoursecom/status/2078142555821092892" target="_blank" rel="noopener">x.com/designcoursecom/status/2078142555821092892</a></span></li>
+      <li class="rv"><b>Figma Motion</b> <span>— motion design inside Figma, from Config 2026. <a href="https://x.com/Varcyyyy/status/2069925766222209119" target="_blank" rel="noopener">x.com/Varcyyyy/status/2069925766222209119</a></span></li>
+      <li class="rv"><b>Storyboard prompt generator</b> <span>— free tool for storyboarding shots before you generate video. <a href="https://x.com/GumVue/status/2064873475529904242" target="_blank" rel="noopener">x.com/GumVue/status/2064873475529904242</a></span></li>
+      <li class="rv"><b>Lumen Decor Studio</b> <span>— real-time WebGPU/Three.js lighting demo in 6.3 MB. <a href="https://lumen-decor-studio-2.vercel.app" target="_blank" rel="noopener">lumen-decor-studio-2.vercel.app</a></span></li>
+      <li class="rv"><b>China&#x27;s design-engineering scene</b> <span>— a pointer worth following. <a href="https://x.com/dqnamo/status/2086546757979156525" target="_blank" rel="noopener">x.com/dqnamo/status/2086546757979156525</a></span></li>
+    </ul>
+    <h3 class="sub rv">3D modelling &amp; libraries</h3>
+    <ul class="linklist">
+      <li class="rv"><b>text-to-cad</b> <span>— open-source harness that turns coding agents into CAD engineers: STEP, STL, URDF, G-code out, with DFM checks (10K stars). <a href="https://x.com/earthtojake/status/2081826428295729284" target="_blank" rel="noopener">x.com/earthtojake/status/2081826428295729284</a></span></li>
+      <li class="rv"><b>Pascal Editor</b> <span>— open-source browser 3D building/architecture editor (React Three Fiber + WebGPU). <a href="https://x.com/TechByNagma/status/2081253476374561198" target="_blank" rel="noopener">x.com/TechByNagma/status/2081253476374561198</a></span></li>
+      <li class="rv"><b>iCity</b> <span>— procedural city generator for Blender. <a href="https://superhivemarket.com/products/icity" target="_blank" rel="noopener">superhivemarket.com/products/icity</a></span></li>
+      <li class="rv"><b>SLAM3R</b> <span>— open-source real-time 3D scene reconstruction from a single ordinary video, ~20 fps, no LiDAR. <a href="https://x.com/heyrobinai/status/2078773865925509613" target="_blank" rel="noopener">x.com/heyrobinai/status/2078773865925509613</a></span></li>
+      <li class="rv"><b>AI + Blender MCP</b> <span>— an AI that builds a 3D scene, looks at its render, and fixes its own mistakes. <a href="https://x.com/irinatoxi/status/2080550212913725446" target="_blank" rel="noopener">x.com/irinatoxi/status/2080550212913725446</a></span></li>
+      <li class="rv"><b>Flick 3D Stage</b> <span>— an agent-driven &quot;Blender&quot; step inside AI video workflows, free. <a href="https://x.com/minchoi/status/2080339866336845966" target="_blank" rel="noopener">x.com/minchoi/status/2080339866336845966</a></span></li>
+      <li class="rv"><b>HAELE 3D Pose Studio</b> <span>— pose/anatomy drawing-reference tool. <a href="https://x.com/haele3d/status/2081379259742928947" target="_blank" rel="noopener">x.com/haele3d/status/2081379259742928947</a></span></li>
+      <li class="rv"><b>Blueprint — Claude for hardware</b> <span>— idea → full hardware build plan. <a href="https://x.com/Sajeel_Purewal/status/2069099646308220973" target="_blank" rel="noopener">x.com/Sajeel_Purewal/status/2069099646308220973</a></span></li>
+      <li class="rv"><b>Three.js showcases</b> <span>— a 3D Concorde, a photorealistic Bugatti W16 engine, and a 3D anatomy app, each AI-built: <a href="https://x.com/RoundtableSpace/status/2084138440283640087" target="_blank" rel="noopener">x.com/RoundtableSpace/status/2084138440283640087</a> · 2078612025220223344 · 2084176189002858993</span></li>
+    </ul>
+    <h3 class="sub rv">Specialized research</h3>
+    <ul class="linklist">
+      <li class="rv"><b>Graphiti</b> <span>— context-graph long-term memory for AI agents (29K stars). <a href="https://github.com/getzep/graphiti" target="_blank" rel="noopener">github.com/getzep/graphiti</a></span></li>
+      <li class="rv"><b>Zero Trust for AI Agents</b> <span>— Anthropic&#x27;s 36-page agent-security guide. <a href="https://x.com/DataChaz/status/2063158890469196218" target="_blank" rel="noopener">x.com/DataChaz/status/2063158890469196218</a></span></li>
+      <li class="rv"><b>Sakana AI&#x27;s Fugu</b> <span>— collective-intelligence thesis + multi-agent orchestration. <a href="https://x.com/hardmaru/status/2068884466056225025" target="_blank" rel="noopener">x.com/hardmaru/status/2068884466056225025</a></span></li>
+      <li class="rv"><b>GLM-5.2 open weights</b> <span>— frontier-class model you can run locally (2-bit builds via Unsloth). <a href="https://x.com/Zai_org/status/2066938937344495629" target="_blank" rel="noopener">x.com/Zai_org/status/2066938937344495629</a></span></li>
+      <li class="rv"><b>OSWorld Verified</b> <span>— the computer-use benchmark where open models now trade blows with frontier labs. <a href="https://x.com/RoundtableSpace/status/2089906447056597068" target="_blank" rel="noopener">x.com/RoundtableSpace/status/2089906447056597068</a></span></li>
+      <li class="rv"><b>Nigeria 2023 elections dataset/API</b> <span>— full election results as open data. <a href="https://nigeria2.com" target="_blank" rel="noopener">nigeria2.com</a> (<a href="https://x.com/markessien/status/2078537387349590335" target="_blank" rel="noopener">x.com/markessien/status/2078537387349590335</a>)</span></li>
+      <li class="rv"><b>World Monitor</b> <span>— open-source global-intelligence dashboard: 3D globe, 500+ live feeds. <a href="https://x.com/MarioNawfal/status/2079427397942927655" target="_blank" rel="noopener">x.com/MarioNawfal/status/2079427397942927655</a></span></li>
+    </ul>
+    <div class="note rv"><b>How to use a shelf like this.</b> Do not try to read it all. Pick the one category closest to what you are building this month, open three links, and go deep on one. Curiosity compounds the same way consistency does.</div>
+  </div>
+</section>
+
+<!-- ================= 30-DAY PLAN ================= -->
+<section id="plan">
+  <div class="wrap">
+    <div class="kicker rv">Part 7</div>
+    <h2 class="sec rv">Your 30-day plan</h2>
+    <p class="lede rv">A few evenings a week is enough. Don't aim for perfect — aim for shipped. <b>Tick these off as you go; this page remembers your progress on this device.</b></p>
+
+    <div class="planhead rv">
+      <div class="ring" id="ring">
+        <svg width="112" height="112" viewBox="0 0 112 112" aria-hidden="true">
+          <defs><linearGradient id="ringgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#29A9E1"/><stop offset="1" stop-color="#2FB7A8"/></linearGradient></defs>
+          <circle class="bgc" cx="56" cy="56" r="48" fill="none" stroke-width="10"/>
+          <circle class="fgc" id="ringFg" cx="56" cy="56" r="48" fill="none" stroke-width="10" stroke-dasharray="301.6" stroke-dashoffset="301.6"/>
+        </svg>
+        <div class="lbl" id="ringLbl">0%</div>
+      </div>
+      <div class="txt">
+        <b id="planTitle">Twenty-one steps to a working AI-powered brand</b>
+        <p id="planMsg">Nothing ticked yet. Start with Week 1 — picking one assistant takes four minutes.</p>
+      </div>
+      <button class="btn btn-line btn-sm" id="planReset" type="button">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7M3 4v5h5"/></svg>
+        Reset
+      </button>
+    </div>
+
+    <div class="weeks" id="weeks"></div>
+
+    <div class="note warn rv"><b>The three rules that make it stick.</b>
+      <ol>
+        <li>AI drafts — <b>you approve</b> anything public, legal, or money-related.</li>
+        <li>One paid tool at a time, and only when it passes a test: you hit the free limit weekly, it saves 2+ hours a month, or it touches revenue.</li>
+        <li><b>Consistency for 90 days beats brilliance for one week.</b></li>
+      </ol>
+    </div>
+
+    <h3 class="sub rv">If you remember five things</h3>
+    <div class="grid g2">
+      <div class="card tilt rv"><span class="sheen" aria-hidden="true"></span><h3>1 · You are still early</h3><p>Every era rewarded early adapters — the first businesses online, the first brands on social. With AI, that window is open right now.</p></div>
+      <div class="card tilt rv"><span class="sheen" aria-hidden="true"></span><h3>2 · Prompt like a manager</h3><p>Role, context, constraints, examples, iterate. Brief it the way you'd brief a person you're paying.</p></div>
+      <div class="card tilt rv"><span class="sheen" aria-hidden="true"></span><h3>3 · One assistant, mastered</h3><p>One paid assistant you know deeply beats ten browser tabs of tools you half-use.</p></div>
+      <div class="card tilt rv"><span class="sheen" aria-hidden="true"></span><h3>4 · Ship something this week</h3><p>A one-page site, hosted free, with a QR code on your card. Done beats planned.</p></div>
+      <div class="card tilt rv" style="grid-column:1/-1"><span class="sheen" aria-hidden="true"></span><h3>5 · Your voice is the moat</h3><p>The tools are the same for everyone. Taste is not. Edit every draft until it sounds like you — that's the part no model can copy from a prompt.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONNECT ================= -->
+<section id="connect">
+  <div class="wrap">
+    <div class="connect rv">
+      <h2>Let's connect</h2>
+      <p class="cl">Questions, collaborations, or — best of all — send me the website you shipped. I read every one.</p>
+
+      <div class="clinks">
+        <a class="clink star" href="https://thenfchq.com/godwin" target="_blank" rel="noopener">
+          <span class="ic" style="background:linear-gradient(135deg,var(--blue),var(--teal))"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="3"/><circle cx="8.5" cy="11" r="2.2"/><path d="M5 16.2c.7-1.5 2-2.2 3.5-2.2s2.8.7 3.5 2.2M15 9.5h4M15 13h3"/></svg></span>
+          <span><b>My digital business card</b><small>thenfchq.com/godwin — save my contact, call or WhatsApp me in one tap</small></span>
+        </a>
+        <a class="clink" href="https://godwin.innoedgetech.com/" target="_blank" rel="noopener">
+          <span class="ic" style="background:linear-gradient(135deg,var(--teal),#1E8E82)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18"/></svg></span>
+          <span><b>My portfolio</b><small>godwin.innoedgetech.com — DevOps, SRE and full-stack engineering work</small></span>
+        </a>
+        <a class="clink" href="https://agbanegodwin.me" target="_blank" rel="noopener">
+          <span class="ic" style="background:linear-gradient(135deg,var(--yellow),#D9A616)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M4 9h16M8 5v14"/></svg></span>
+          <span><b>agbanegodwin.me</b><small>The personal site — the kind of thing you'll build in Week 3</small></span>
+        </a>
+        <a class="clink" href="https://www.linkedin.com/search/results/all/?keywords=Godwin%20Agbane" target="_blank" rel="noopener">
+          <span class="ic" style="background:linear-gradient(135deg,#0A66C2,#084E96)"><svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.3 8.4h4.4V24H.3zM8.34 8.4h4.2v2.1h.06c.59-1.1 2.02-2.27 4.16-2.27 4.45 0 5.27 2.93 5.27 6.73V24h-4.4v-6.93c0-1.65-.03-3.78-2.3-3.78-2.3 0-2.65 1.8-2.65 3.66V24h-4.4z"/></svg></span>
+          <span><b>Godwin Agbane on LinkedIn</b><small>Connect — mention GBEDEGU so I know where we met</small></span>
+        </a>
+        <a class="clink" href="mailto:agbane6@gmail.com?subject=GBEDEGU%20%2726%20%E2%80%94%20hello">
+          <span class="ic" style="background:linear-gradient(135deg,#5D6580,#39405C)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span><b>agbane6@gmail.com</b><small>Email me directly</small></span>
+        </a>
+        <a class="clink" href="https://innoedgetech.com" target="_blank" rel="noopener">
+          <span class="ic" style="background:linear-gradient(135deg,#2C3A78,#151F4A)"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg></span>
+          <span><b>Innoedge Technologies</b><small>innoedgetech.com — what we build</small></span>
+        </a>
+      </div>
+
+      <div class="qrrow">
+        <div class="qrcard">
+          <div class="qbox" id="qrHub"></div>
+          <div>
+            <b>This page</b>
+            <small>jci.innoedgetech.com</small>
+            <button class="copy" data-copy="https://jci.innoedgetech.com" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg> Copy link</button>
+          </div>
+        </div>
+        <div class="qrcard">
+          <div class="qbox" id="qrCard"></div>
+          <div>
+            <b>My contact card</b>
+            <small>thenfchq.com/godwin</small>
+            <button class="copy" data-copy="https://thenfchq.com/godwin" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg> Copy link</button>
+          </div>
+        </div>
+      </div>
+
+      <form class="form" id="leadForm" novalidate>
+        <div>
+          <b style="font-family:var(--fd);font-size:19px;font-weight:800;color:#fff;display:block;margin-bottom:5px">Send me the site you shipped</b>
+          <p class="formnote">Built something in Week 3? Send it over — I'll take a look and reply. Nothing is stored on this page; it opens a message you send yourself.</p>
+        </div>
+        <div class="fg">
+          <div class="field"><label for="lfName">Your name</label><input id="lfName" name="name" type="text" placeholder="Ada Obi" autocomplete="name" required></div>
+          <div class="field"><label for="lfLink">Your site or handle</label><input id="lfLink" name="link" type="text" placeholder="adaobi.com  ·  @adaobi" autocomplete="url"></div>
+        </div>
+        <div class="field"><label for="lfMsg">Message</label><textarea id="lfMsg" name="message" placeholder="I shipped my one-pager after the GBEDEGU session — here's the link. One thing I'm stuck on is…"></textarea></div>
+        <div class="cta-row" style="align-items:center;gap:14px">
+          <button class="btn btn-primary mag" type="submit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 10.5 13.5M21 3l-6.8 18-3.7-7.5L3 9.8z"/></svg>
+            Send on WhatsApp
+          </button>
+          <button class="btn btn-ghost" type="button" id="lfMail">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
+            Email instead
+          </button>
+          <p class="formstatus" id="lfStatus" role="status"></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="fl"><b>The GBEDEGU '26 AI Playbook</b> — prepared for the Skills Development Session, JCI Northern Conference, Hawthorn Suites Abuja, 21 August 2026.</div>
+  <div class="fl">Built and hosted by <a href="https://innoedgetech.com" target="_blank" rel="noopener">Innoedge Technologies</a>. Nothing on this page is sponsored — every tool listed is one I actually use.</div>
+  <div>Prices and free tiers verified August 2026 and subject to change. <a href="#top">Back to top</a></div>
+</footer>
+
+<button class="buddy" id="buddy" type="button" aria-label="A tip from the robot">
+  <span class="tip" id="buddyTip" aria-hidden="true"></span>
+  <svg viewBox="0 0 300 340" aria-hidden="true">
+    <use href="#bob"/>
+  </svg>
+</button>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="/vendor/gsap.min.js" defer></script>
+<script src="/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/vendor/qrcode.min.js" defer></script>
+<script src="/assets/js/data.js" defer></script>
+<script src="/assets/js/app.js" defer></script>
+<script src="/assets/js/robot.js" defer></script>
+<script src="/assets/js/motion.js" defer></script>
+<script src="/assets/js/scene.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jci.innoedgetech.com/sitemap.xml
